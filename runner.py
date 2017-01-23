@@ -5,7 +5,7 @@ import subprocess
 app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
-def run():
+def foo():
     return "Hello world"
 
 @app.route("/", methods=['POST', 'PUT'])
