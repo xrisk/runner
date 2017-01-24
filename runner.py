@@ -19,11 +19,8 @@ def cpp():
 
 @app.route("/python", methods=['POST', 'PUT'])
 def python():
-    f = subprocess.run(["python"], input=request.form["code"], stdout=subprocess.PIPE, encoding="utf-8", stderr=subprocess.STDOUT)
-    if f.returncode != 0:
-        return (f.stderr, {'Access-Control-Allow-Origin': '*'})
-    else:
-        return (f.stdout, {'Access-Control-Allow-Origin': '*'})
+    f = subprocess.run(["python"], input=request.form["code"], stdout=subprocess.PIPE, encoding="utf-8", stderr=subprocess.STDOUT)  
+    return (f.stdout, {'Access-Control-Allow-Origin': '*'})
 
 @app.route("/", methods=['GET'])
 def help():
