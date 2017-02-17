@@ -26,4 +26,6 @@ def python():
 def help():
     return "http[ie] -f POST /lang-id/ code=@input.py"
 
-app.run(host='0.0.0.0', port=int(os.getenv("PORT")))
+from waitress import serve
+
+serve(app, port=int(os.getenv("PORT")) )
