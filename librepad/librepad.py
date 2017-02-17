@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from flask import Flask, request
 import os
 
@@ -26,6 +27,4 @@ def python():
 def help():
     return "http[ie] -f POST /lang-id/ code=@input.py"
 
-from waitress import serve
-
-serve(app, port=int(os.getenv("PORT")) )
+application = app
